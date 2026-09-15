@@ -5,27 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Forest.unity
-    guid: ad880786a03f92e4fbd782fa5c04de37
-  - enabled: 1
-    path: Assets/Scenes/Castle.unity
-    guid: c7d1da764f839d8418b22acf00514de8
-  - enabled: 1
-    path: Assets/Scenes/Clock tower.unity
-    guid: 3714d62cfe7f4fa419d39d0754b3fb15
-  - enabled: 1
-    path: Assets/Scenes/Amusement park.unity
-    guid: 169957983c263b845857017f8f2d15bb
-  - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: 29e92a97c0144634484f7ca7b77d4b32
-  - enabled: 1
-    path: Assets/Scenes/Load.unity
-    guid: 89d77cde52e80b341b6ee8114a6d748e
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
