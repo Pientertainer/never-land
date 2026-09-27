@@ -100,5 +100,6 @@
   <Project Path="Unity.AI.Generators.Contexts.csproj" />
   <Project Path="Unity.AI.Generators.IO.Srp.csproj" />
   <Project Path="Unity.AI.Animate.Motion.Runtime.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.2D.Triangulation.Runtime.csproj" />
 </Solution>
