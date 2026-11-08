@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d96c1c4c112304aa0a59119dc62898, type: 3}
   m_Name: Memory-O 7
   m_EditorClassIdentifier: Assembly-CSharp::MemoryData
-  memoryName: Memory-O 2
-  memoryDetails: Memory -O 2
+  memoryName: Memory-O 7
+  memoryDetails: Memory -O 7
