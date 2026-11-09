@@ -4,36 +4,25 @@ using TMPro;
 
 public class MemoryManager : MonoBehaviour
 {
-    // カテゴリーごとのPanel
-    public GameObject peoplePanel;
-    public GameObject locationPanel;
-    public GameObject otherPanel;
+    // 記憶データ
+    public MemoryData[] peopleMemories;
+    public MemoryData[] locationMemories;
+    public MemoryData[] otherMemories;
 
-    // 記憶名のTextMeshPro
+    // 記憶一覧の表示
     public TMP_Text[] peopleMemoryNames;
     public TMP_Text[] locationMemoryNames;
     public TMP_Text[] otherMemoryNames;
 
+    // 入手数の表示
     public TMP_Text memoryCount;
 
-    // 記憶を入手しているかどうか
-    public bool[] peopleObtained;
-    public bool[] locationObtained;
-    public bool[] otherObtained;
+    // カテゴリーのパネル
+    public GameObject peoplePanel;
+    public GameObject locationPanel;
+    public GameObject otherPanel;
 
-    // 記憶の名前
-    public string[] peopleNames;
-    public string[] locationNames;
-    public string[] otherNames;
-
-
-    void Start()
-{
-    ShowPeople();
-}
-
-
-    // 人物タブ
+    // 人物の記憶
     public void ShowPeople()
     {
         peoplePanel.SetActive(true);
@@ -42,15 +31,13 @@ public class MemoryManager : MonoBehaviour
 
         UpdateMemoryList(
             peopleMemoryNames,
-            peopleNames,
-            peopleObtained
+            peopleMemories
         );
 
-        UpdateMemoryCount(peopleObtained);
+        UpdateMemoryCount(peopleMemories);
     }
 
-
-    // 場所タブ
+    // 場所の記憶
     public void ShowLocation()
     {
         peoplePanel.SetActive(false);
@@ -59,15 +46,13 @@ public class MemoryManager : MonoBehaviour
 
         UpdateMemoryList(
             locationMemoryNames,
-            locationNames,
-            locationObtained
+            locationMemories
         );
 
-        UpdateMemoryCount(locationObtained);
+        UpdateMemoryCount(locationMemories);
     }
 
-
-    // その他タブ
+    // その他の記憶
     public void ShowOther()
     {
         peoplePanel.SetActive(false);
@@ -76,49 +61,73 @@ public class MemoryManager : MonoBehaviour
 
         UpdateMemoryList(
             otherMemoryNames,
-            otherNames,
-            otherObtained
+            otherMemories
         );
 
-        UpdateMemoryCount(otherObtained);
+        UpdateMemoryCount(otherMemories);
     }
 
-
-    // 記憶の名前を更新
+    // 記憶一覧を更新
     void UpdateMemoryList(
         TMP_Text[] texts,
-        string[] names,
-        bool[] obtained
+        MemoryData[] memories
     )
     {
         for (int i = 0; i < texts.Length; i++)
         {
-            if (obtained[i])
+            if (memories[i] != null &&
+                memories[i].obtained)
             {
-                texts[i].text = names[i];
+                texts[i].text = memories[i].memoryName;
             }
             else
             {
-                texts[i].text = "？？？";
+                texts[i].text = "???";
             }
         }
     }
 
-
-    // 入手済みの記憶数を表示
-    void UpdateMemoryCount(bool[] obtained)
+    // 入手数を更新
+    void UpdateMemoryCount(MemoryData[] memories)
     {
         int count = 0;
 
-        for (int i = 0; i < obtained.Length; i++)
+        for (int i = 0; i < memories.Length; i++)
         {
-            if (obtained[i])
+            if (memories[i] != null &&
+                memories[i].obtained)
             {
                 count++;
             }
         }
 
         memoryCount.text =
-            "記憶：" + count + "/" + obtained.Length;
+            "記憶：" + count + "/" + memories.Length;
+    }
+
+    // 記憶を入手する
+    public void AcquireMemory(MemoryData memory)
+    {
+        if (memory == null)
+        {
+            Debug.LogWarning("MemoryDataが設定されていません");
+            return;
+        }
+
+        memory.obtained = true;
+
+        // 現在表示しているカテゴリーを更新
+        if (peoplePanel.activeSelf)
+        {
+            ShowPeople();
+        }
+        else if (locationPanel.activeSelf)
+        {
+            ShowLocation();
+        }
+        else if (otherPanel.activeSelf)
+        {
+            ShowOther();
+        }
     }
 }

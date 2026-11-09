@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MemoryData
   memoryName: Memory(2)
   memoryDetails: Memory(2)
+  obtained: 1

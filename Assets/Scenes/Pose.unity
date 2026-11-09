@@ -6696,7 +6696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
+  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7851,8 +7851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.43921572, g: 0.43921572, b: 0.43921572, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7893,8 +7893,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -208.06381, y: -24.517}
-  m_SizeDelta: {x: -416.1276, y: -130.03}
+  m_AnchoredPosition: {x: -200.53758, y: -24.516998}
+  m_SizeDelta: {x: -431.1801, y: -130.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &816253135
 GameObject:
@@ -9866,6 +9866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MemoryDetailsManager
   memoryTitle: {fileID: 487677377}
   memoryDetails: {fileID: 1561233489}
+  recallButton: {fileID: 2080756505}
 --- !u!114 &1000685002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9878,9 +9879,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad86ee0e8ad389a4bb8a81a76afa65f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MemoryManager
-  peoplePanel: {fileID: 1482722265}
-  locationPanel: {fileID: 814900244}
-  otherPanel: {fileID: 708212794}
+  peopleMemories:
+  - {fileID: 11400000, guid: 4181677b1fc83f343bc257e0586e9bd3, type: 2}
+  - {fileID: 11400000, guid: efbed6fc2ea7189428feff6ccd835bed, type: 2}
+  - {fileID: 11400000, guid: 9a8080f92f33e4e4b878c4a545da3295, type: 2}
+  - {fileID: 11400000, guid: 259cae91259a6594eb81d1428a1bbd46, type: 2}
+  - {fileID: 11400000, guid: 7cff18640d31df4439792f885d9b1f4c, type: 2}
+  - {fileID: 11400000, guid: f23be29ef1a0c7a44ba924c2253aa183, type: 2}
+  - {fileID: 11400000, guid: ee9fdffe6ecddf5408f18f3408d8cc9d, type: 2}
+  locationMemories:
+  - {fileID: 11400000, guid: 59a8a545bdf2a4b4fb30799d2aa146c1, type: 2}
+  - {fileID: 11400000, guid: a249c7e41831ca641b35b6f93161a2ce, type: 2}
+  - {fileID: 11400000, guid: 395ee3b1e7006c843ae11736a301ee57, type: 2}
+  - {fileID: 11400000, guid: 94e703fd293df9342937687a61470d1d, type: 2}
+  - {fileID: 11400000, guid: 696655d3d39b9c248b8b77c3b61cd145, type: 2}
+  - {fileID: 11400000, guid: fd7608d56539c5d48a730cc8077418ee, type: 2}
+  - {fileID: 11400000, guid: 773617d12e1a91548acb095252a59004, type: 2}
+  otherMemories:
+  - {fileID: 11400000, guid: dcb322533140e6d4998e6c74e8eba499, type: 2}
+  - {fileID: 11400000, guid: 00c13133580cd0f4baca8d55cd94317d, type: 2}
+  - {fileID: 11400000, guid: a74d387f731314c4d9ccd1bc95607463, type: 2}
+  - {fileID: 11400000, guid: cbd3546c757c3c842bbb109879c6d9cf, type: 2}
+  - {fileID: 11400000, guid: 3f6cfb1bf3d615146810c91d0088e828, type: 2}
+  - {fileID: 11400000, guid: a58defa12bea06940bb8e577eda73a55, type: 2}
+  - {fileID: 11400000, guid: 768e10c1728bc734fb8ff1126fcb4154, type: 2}
   peopleMemoryNames:
   - {fileID: 1802982426}
   - {fileID: 578080786}
@@ -9890,49 +9912,25 @@ MonoBehaviour:
   - {fileID: 294923388}
   - {fileID: 828613281}
   locationMemoryNames:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 226701915}
+  - {fileID: 124617869}
+  - {fileID: 1017486600}
+  - {fileID: 1335032879}
+  - {fileID: 1482732280}
+  - {fileID: 1384800662}
+  - {fileID: 896149919}
   otherMemoryNames:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1627352209}
+  - {fileID: 1866285081}
+  - {fileID: 298741104}
+  - {fileID: 1532950445}
+  - {fileID: 413772516}
+  - {fileID: 1468541054}
+  - {fileID: 1009486295}
   memoryCount: {fileID: 364588118}
-  peopleObtained: 01010100000000
-  locationObtained: 00000000000000
-  otherObtained: 00000000000000
-  peopleNames:
-  - Memory-C 1
-  - Memory-C 2
-  - Memory-C 3
-  - Memory-C 4
-  - Memory-C 5
-  - Memory-C 6
-  - Memory-C 7
-  locationNames:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  otherNames:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  peoplePanel: {fileID: 1482722265}
+  locationPanel: {fileID: 814900244}
+  otherPanel: {fileID: 708212794}
 --- !u!1 &1008882222
 GameObject:
   m_ObjectHideFlags: 0
@@ -16065,7 +16063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
